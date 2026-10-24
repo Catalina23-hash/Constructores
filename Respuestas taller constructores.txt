@@ -1,0 +1,53 @@
+1. Análisis de Constructores (Parte C.1)
+Habitacion(int n, String t) y Habitacion(int numero, String tipo)
+
+¿Pueden existir al mismo tiempo?: No.
+
+Justificación: Tienen exactamente la misma firma (int, String). Para Java, los nombres de los parámetros no diferencian la firma.
+
+Habitacion(String tipo, int numero)
+
+¿Puede coexistir?: Sí.
+
+Justificación: Su firma es diferente (String, int) al invertir el orden de los tipos.
+
+Habitacion(int numero)
+
+¿Puede coexistir?: Sí.
+
+Justificación: Su firma es única al recibir un único parámetro de tipo int.
+
+2. Preguntas de Comprensión
+¿Qué diferencias hay entre un constructor y un método? Menciona al menos tres.
+
+El constructor tiene el mismo nombre de la clase y no tiene tipo de retorno; el método tiene un nombre arbitrario y exige un tipo de retorno (o void).
+
+El constructor se ejecuta automáticamente al usar new; el método se invoca explícitamente sobre un objeto existente.
+
+El constructor inicializa el estado del objeto al nacer; el método define acciones o comportamientos durante su ciclo de vida.
+
+1. ¿Qué diferencias hay entre un constructor y un método? Menciona al menos tres.
+2. ¿Por qué new Paquete() dejó de compilar en la Etapa 2? ¿Qué harías si la empresa necesitara seguir creando
+paquetes sin datos?
+3. ¿Qué ocurriría si en el constructor de Paquete escribieras peso = peso; en lugar de this.peso = peso;? ¿El
+programa compilaría?
+4. ¿Qué es la firma de un método y por qué el tipo de retorno no sirve para distinguir dos versiones
+sobrecargadas?
+5. ¿Qué ventaja tiene que los constructores abreviados de Paquete deleguen con this(...) en lugar de asignar los
+atributos ellos mismos?
+
+Respuestas
+
+1.-El constructor se llama igual que la clase y no tiene tipo de retorno; el método tiene nombre libre y exige un tipo de retorno 
+
+-El constructor se ejecuta automáticamente al usar new; el método se llama manualmente sobre un objeto existente.
+
+-El constructor inicializa el estado del objeto; el método define acciones o comportamientos.
+
+2.dejó de compilar: Java elimina el constructor vacío automático al crear uno con datos. Se soluciona agregándolo manualmente
+
+3.Escribir peso = peso; sin this: Sí compila, pero el atributo queda en 0.0 por confusión de nombres this es obligatorio para diferenciarlos.
+
+4.Firma y tipo de retorno: La firma es el nombre y sus parámetros. El tipo de retorno no sirve para distinguir métodos porque al llamar un método a veces no se usa su resultado, generando ambigüedad para el compilador.
+
+5.Delegar con Evita repetir código y centraliza la inicialización en un solo sitio.
